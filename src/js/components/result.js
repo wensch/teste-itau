@@ -23,6 +23,9 @@ jails('result', (component, element) => {
 
   const showData = (event, value) => {
     let url = 'https://api.github.com/users/' + value +'/'+ event.target.dataset.api
+
+    jails.publish('show-load')
+
     fetch(url)
     .then(response => response.json())
     .then((data) => {
@@ -36,6 +39,7 @@ jails('result', (component, element) => {
     let rendered = mustache.render(template, {data});
     holderRendered.innerHTML = rendered
     if (element.querySelector('.title-template')) element.querySelector('.title-template').textContent = title
+    jails.publish('remove-load')
   }
 
   const clearTemplate = () => {

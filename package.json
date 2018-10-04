@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run watch && mk-assets",
+    "start": "npm run watch",
     "watch": "npm-run-all -p watch:*",
-    "mk-assets": "mkdirp dist/assets",
     "mk-css": "mkdirp dist/assets/css",
     "mk-js": "mkdirp dist/assets/js",
     "mk-img": "mkdirp dist/assets/img",

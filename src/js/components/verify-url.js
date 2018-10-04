@@ -10,8 +10,10 @@ jails('verify-url', (component, element) => {
     let pathname = window.location.pathname.replace('/', '')
     let url = "https://api.github.com/users/" + pathname
     let templateError = document.querySelector('.msg-error').querySelector('.title-error')
-
+    
     if (pathname) {
+      jails.publish('show-load')
+
       fetch(url)
         .then((response) => {
           if (response.ok) {
@@ -23,6 +25,7 @@ jails('verify-url', (component, element) => {
         })
         .then((data) => {
           jails.publish('user-send', data, pathname)
+          jails.publish('remove-load')
         })
         .catch(err => {
           console.log(err)
