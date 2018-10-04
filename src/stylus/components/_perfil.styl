@@ -1,5 +1,6 @@
 .perfil
 	margin-top 30px
+	padding-bottom 30px
 	position relative
 
 	&-content
@@ -41,6 +42,9 @@
 		border-top 1px solid #eaecef
 		color #24292e
 		font-size 14px
+
+		a
+			color #24292e
 
 	&-mail
 		color $dark-color
@@ -141,6 +145,7 @@
 		margin-top 20px
 
 	.btn-api
+		cursor pointer
 		background-color #404448
 		border 0
 		border-bottom 4px solid #1a1c1f
@@ -148,7 +153,30 @@
 		font-size 14px
 		padding 10px 16px
 		margin-right 15px
-	
+		transform perspective(1px) translateZ(0)
+		box-shadow 0 0 1px rgba(0, 0, 0, 0)
+		position relative
+		outline-color #404448
+
+		&:before
+			content ""
+			position absolute
+			z-index -1
+			top 0
+			left 0
+			right 0
+			bottom 0
+			background #1a1c1f
+			transform scaleY(0)
+			transform-origin 50% 100%
+			transition-property transform
+			transition-duration 0.2s
+			transition-timing-function ease-out
+		
+		&:hover
+			&:before
+				transform scaleY(1)
+
 	@media (max-width $mobile)
 		display flex
 		flex-direction column

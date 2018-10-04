@@ -4,7 +4,7 @@
       [[#data]]
         <div class="perfil-personal">
           <div class="perfil-image">
-            <img src="[[avatar_url]]" alt="">
+            <img src="[[avatar_url]]" alt="[[name]]">
           </div>
           <div class="perfil-details">
             <h2 class="perfil-name">[[name]]</h2>
@@ -16,7 +16,7 @@
             <li><a href="mailto:[[email]]" class="perfil-mail">[[email]]</a></li>
             <li>[[company]]</li>
             <li>[[location]]</li>
-            <li>[[blog]]</li>
+            <li><a href="[[blog]]">[[blog]]</a></li>
           </ul>
         </div>
         <div class="perfil-projects">
@@ -67,8 +67,8 @@
     </script>
   </div>
   <div class="perfil-button">
-    <button class="btn-api" data-api="repos" data-title="repositories">Repos</button>
-    <button class="btn-api" data-api="starred" data-title="starred">Starred</button>
+    <button type="button" class="btn-api" data-api="repos" data-title="repositories">Repos</button>
+    <button type="button" class="btn-api" data-api="starred" data-title="starred">Starred</button>
   </div>
   <div class="msg-error">
     <span class="icon-error">¯\_(ツ)_/¯</span>
