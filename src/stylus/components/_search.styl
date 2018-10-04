@@ -1,0 +1,75 @@
+v = 100px
+.search
+  margin-left 30px
+  position relative
+  width "calc(100% - %s)" % v
+
+  input
+    // background-color rgba(0, 0, 0, 0.16)
+    background-color #3f4448
+    border 0
+    box-shadow 0 0 1px rgba(0, 0, 0, 0)
+    border-bottom 2px solid #1a1c1f
+    box-sizing border-box
+    color #8c8f92
+    font-size 30px
+    // outline-color $highlight-color
+    // outline-width 2px
+    outline 0
+    padding 10px 15px
+    position relative
+    transform perspective(1px) translateZ(0)
+    transition-duration 0.3s
+    transition-property color
+    width 100%
+
+    &:focus +
+      .line
+        transform scaleX(1)
+
+    &::-webkit-input-placeholder
+      color #8c8f92
+    
+  .line
+    content ''
+    position absolute
+    z-index -1
+    height 6px
+    top auto
+    bottom 0
+    left 0
+    right 0
+    background-color #8c8f92
+    transform scaleX(0)
+    transform-origin 50%
+    transition-property transform
+    transition-duration 0.3s
+    transition-timing-function ease-out
+  
+  .btn-submit
+    cursor pointer
+    border 0
+    background-color transparent
+    position absolute
+    right 0
+    top 0
+    background-color rgba(0, 0, 0, 0.16)
+    padding 2px 10px
+
+    object
+      pointer-events none
+      height 50px
+      width 50px
+  
+  @media (max-width $mobile-medium)
+    margin-left 0
+    width 100%
+
+    input
+      font-size 20px
+    
+    .btn-submit
+      object
+        height 37px
+        width 37px
+        margin-bottom 0

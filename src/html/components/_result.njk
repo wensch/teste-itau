@@ -1,0 +1,77 @@
+<section class="perfil" data-component="result">
+  <div class="perfil-content">
+    <script id="template-result" type="x-tmpl-mustache">
+      [[#data]]
+        <div class="perfil-personal">
+          <div class="perfil-image">
+            <img src="[[avatar_url]]" alt="">
+          </div>
+          <div class="perfil-details">
+            <h2 class="perfil-name">[[name]]</h2>
+            <span class="perfil-login">[[login]]</span>
+            <p class="perfil-bio">[[bio]]</p>
+            <span class="perfil-type">Type - [[type]]</span>
+          </div>
+          <ul class="perfil-infos">
+            <li><a href="mailto:[[email]]" class="perfil-mail">[[email]]</a></li>
+            <li>[[company]]</li>
+            <li>[[location]]</li>
+            <li>[[blog]]</li>
+          </ul>
+        </div>
+        <div class="perfil-projects">
+          <div class="perfil-list-projects">
+            <a href="#" title="Repositories">Repositories 
+              <span class="counter">[[public_repos]]</span>
+            </a>
+            <a href="#" title="Stars">Stars 
+              <span class="counter">[[public_gists]]</span>
+            </a>
+            <a href="#" title="Followers">Followers
+              <span class="counter"> [[public_gists]]</span>
+            </a>
+            <a href="#" title="Following">Following 
+              <span class="counter"> [[following]] </span>
+            </a>
+          </div>
+        </div>
+      [[/data]]
+    </script>
+  </div>
+  <div class="perfil-repositories">
+    <script id="template-repositories" type="x-tmpl-mustache">
+      <h2 class="title-template"></h2>
+      <div class="perfil-list-repositories">
+        [[#data]]
+          <div class="item">
+            <a href="[[html_url]]" title="[[name]]" class="name">[[name]]</a>
+            [[#description]]<p class="desc">[[.]]</p>[[/description]]
+            <p class="infos">
+              [[#language]]<span>[[language]]</span>[[/language]]
+              [[#stargazers_count]]
+                <a href="[[stargazers_url]]" title="[[stargazers_count]]">
+                  <svg class="octicon octicon-star" viewBox="0 0 14 16" width="14" height="16"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+                  [[.]]
+                </a>
+              [[/stargazers_count]]
+              [[#forks_count]]
+                <a href="[[forks_url]]" title="[[forks_count]]">
+                  <svg class="octicon octicon-repo-forked" viewBox="0 0 10 16" width="10" height="16"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+                  [[.]]
+                </a>
+              [[/forks_count]]
+            </p>
+          </div>
+        [[/data]]
+      </div>
+    </script>
+  </div>
+  <div class="perfil-button">
+    <button class="btn-api" data-api="repos" data-title="repositories">Repos</button>
+    <button class="btn-api" data-api="starred" data-title="starred">Starred</button>
+  </div>
+  <div class="msg-error">
+    <span class="icon-error">¯\_(ツ)_/¯</span>
+    <h2 class="title-error"></h2>
+  </div>
+</section>

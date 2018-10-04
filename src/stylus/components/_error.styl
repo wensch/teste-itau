@@ -1,0 +1,31 @@
+.msg-error
+	text-align center
+	box-sizing border-box
+	display none
+
+	.icon-error
+		font-size 7em
+		display block
+		text-align center
+		margin-bottom 20px
+	
+	.title-error
+		font-size 26px
+
+		i
+			color red
+	
+	@media (max-width $mobile)
+		.icon-error
+			font-size 7em
+
+	@media (max-width $mobile-medium)
+		.icon-error
+			font-size 4em
+
+&.-error
+	.msg-error
+		display block
+	
+	.perfil-button
+		display none

@@ -1,0 +1,247 @@
+.perfil
+	margin-top 30px
+	position relative
+
+	&-content
+		display flex
+		flex-wrap wrap
+
+	&-personal
+		margin-right 40px
+		max-width 230px
+	
+	&-image
+		font-size 0
+
+		img 
+			max-width 100%
+			border-radius 6px
+	
+	&-name
+		font-size 26px
+		margin 15px 0 0
+		font-weight 400
+		line-height 30px
+
+	&-login
+		color #666
+		font-size 20px
+	
+	&-bio
+		margin 15px 0 10px
+	
+	&-type
+		display block
+		color #586069
+		font-size 12px
+		padding-bottom 16px
+	
+	&-infos
+		padding-top 15px
+		border-top 1px solid #eaecef
+		color #24292e
+		font-size 14px
+
+	&-mail
+		color $dark-color
+	
+	&-list-projects
+		display flex
+		margin-right -30px
+
+		> a
+			padding 10px 0
+			margin-right 20px
+			font-size 14px
+			line-height 21px
+			color #586069
+			text-align center
+			border-bottom 2px solid transparent
+			text-decoration none
+
+			&.-selected
+				font-weight 600
+				color #24292e
+				border-bottom-color #e36209
+		
+		.counter
+			display inline-block
+			padding 2px 5px
+			font-size 12px
+			font-weight 500
+			line-height 12px
+			color #586069
+			background-color rgba(27,31,35,0.08)
+			border-radius 20px
+
+	w = 270px
+	&-repositories
+		margin-top 40px
+		position absolute
+		right 0
+		top 0
+		width 'calc(100% - %s)' % w;
+
+		.title-template
+			font-size 16px
+			font-weight 500
+	
+	&-list-repositories
+		display flex
+		list-style none
+		flex-wrap wrap
+		justify-content space-between
+
+		var = 10px
+		.item
+			border 1px solid #d1d5da
+			border-radius 3px
+			box-sizing border-box
+			font-size 12px
+			margin-bottom 20px
+			padding 15px
+			width "calc(50% - %s)" % var
+
+			svg
+				display inline-block
+				fill #586069
+				height 16px
+				vertical-align middle
+				width 14px
+
+			.name
+				font-size 14px
+				color #0366d6
+				font-weight 500
+				text-decoration none
+			
+			.desc
+				margin 8px 0 16px
+
+			.infos
+				margin-right -15px
+
+				> span
+					margin-right 15px
+
+				a
+					color #586069
+					margin-right 15px
+					text-decoration none
+
+					&:hover
+						color #0366d6
+
+						svg
+							fill #0366d6
+
+	&-button
+		display block
+		margin-right -15px
+		margin-top 20px
+
+	.btn-api
+		background-color #404448
+		border 0
+		border-bottom 4px solid #1a1c1f
+		color #f1f1f1
+		font-size 14px
+		padding 10px 16px
+		margin-right 15px
+	
+	@media (max-width $mobile)
+		display flex
+		flex-direction column
+
+		&-personal
+			max-width 100%
+			margin-right 0
+			display flex
+			flex-wrap wrap
+			width 100%
+		
+		&-image
+			max-width 110px
+			float left
+			margin-right 20px
+			margin-bottom 20px
+		
+		&-details
+			margin-right 40px
+		
+		&-name
+			font-size 16px
+			line-height 20px
+			margin-top 0
+
+		&-login
+			font-size 12px
+
+		&-bio
+			font-size 14px
+			margin 5px 0
+		
+		&-infos
+			border 0
+			padding-left 20px
+			font-size 12px
+		
+		&-projects
+			border-top 1px solid #eaecef
+			padding-top 10px
+			margin-top 30px
+			margin-left auto
+			margin-right auto
+
+		&-list-projects
+			margin-right 0
+
+			> a
+				font-size 12px
+				margin-right 10px
+		
+		&-repositories
+			margin-top 20px
+			order 3
+			padding-bottom 30px
+			position relative
+			width 100%
+
+			.item
+				width 100%
+				margin-bottom -1px
+				display flex
+				justify-content space-between
+				padding-left 30px
+				position relative
+
+				&:before
+					background-position center
+					background-size 100%
+					content ''
+					display block
+					height 20px
+					background-image url('/assets/img/icon-book.svg')
+					width 20px
+					position absolute
+					left 5px
+
+				.desc,
+				.infos > span,
+				.infos a:last-child
+					display none
+
+				.infos
+					margin-right 0
+					margin 0
+
+					a
+						display flex
+
+						svg
+							order 2
+							margin-left 5px
+	
+	@media (max-width $mobile-medium)
+		&-bio
+			margin 15px 0 5px

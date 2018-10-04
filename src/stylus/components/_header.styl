@@ -1,0 +1,40 @@
+.header
+	align-items center
+	background-color #24292e
+	box-sizing border-box
+	display flex
+	flex-wrap nowrap
+	justify-content space-between
+	margin 0 auto
+	padding 20px 30px
+	position fixed
+	top 0
+	transform translateY(0)
+	transition transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+	width 100%
+	z-index 1
+
+	&.-fix
+		transform translateY(-117px)
+
+	svg
+		fill $light-color
+		height 70px
+		width 70px
+	
+	@media (max-width $mobile-medium)
+		flex-wrap wrap
+		padding 5px 20px 10px
+
+		&.-fix
+			transform translateY(-55px)
+
+		svg
+			display block
+			height 50px
+			margin 0 auto
+			width 50px
+
+		.logo
+			margin-bottom 10px
+			width 100%
